@@ -4,11 +4,34 @@ module "ec2" {
     name = var.ec2_name
   
     instance_type               = "t4g.micro"
-    availability_zone           = local.availability_zone
+    availability_zone           = element(module.vpc.azs, 0)
     subnet_id                   = element(module.vpc.public_subnets, 0)
     vpc_security_group_ids      = [module.security_group.security_group_id]
     associate_public_ip_address = true
   
+    root_block_device = [
+    {
+      encrypted   = true
+      volume_type = "gp3"
+      volume_size = 10
+      tags = {
+        Name = "my-root-block"
+      }
+    },
+  ]
+
+  ebs_block_device = [
+    {
+      device_name = "/dev/sdb"
+      volume_type = "gp3"
+      volume_size = 3
+      encrypted   = true
+      kms_key_id  = aws_kms_key.this.arn
+    }
+  ]
+
+
+
     tags = var.ec2_tags
   }
 
