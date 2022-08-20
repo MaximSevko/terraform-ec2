@@ -21,40 +21,40 @@ module "ec2" {
     },
   ]
 
-#  ebs_block_device = [
-#    {
-#      device_name = "/dev/sdb"
-#      volume_type = "gp3"
-#      volume_size = 3
-#      encrypted   = true
-#      kms_key_id  = aws_kms_key.this.arn
-#    },
-#    {
-#      device_name = "/dev/sdc"
-#      volume_type = "gp3"
-#      volume_size = 2
-#      encrypted   = true
-#      kms_key_id  = aws_kms_key.this.arn
-#    }
-#  ]
+  ebs_block_device = [
+    {
+      device_name = "/dev/sdb"
+      volume_type = "gp3"
+      volume_size = 3
+      encrypted   = true
+      kms_key_id  = aws_kms_key.this.arn
+    },
+    {
+      device_name = "/dev/sdc"
+      volume_type = "gp3"
+      volume_size = 2
+      encrypted   = true
+      kms_key_id  = aws_kms_key.this.arn
+    }
+  ]
 
 
 
     tags = var.ec2_tags
   }
 
-  resource "aws_volume_attachment" "this" {
-  device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.this.id
-  instance_id = module.ec2.id
-}
-
-resource "aws_ebs_volume" "disk1" {
-  availability_zone = local.availability_zone
-  size              = 2
-
-  tags = var.volume_tags
-}
-
-resource "aws_kms_key" "this" {
-}
+#  resource "aws_volume_attachment" "this" {
+#  device_name = "/dev/sdh"
+#  volume_id   = aws_ebs_volume.this.id
+#  instance_id = module.ec2.id
+#}
+#
+#resource "aws_ebs_volume" "disk1" {
+#  availability_zone = local.availability_zone
+#  size              = 2
+#
+#  tags = var.volume_tags
+#}
+#
+#resource "aws_kms_key" "this" {
+#}
