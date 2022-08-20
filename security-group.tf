@@ -9,7 +9,7 @@ module "security_group" {
   ingress_ipv6_cidr_blocks = ["::/0"]
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules       = ["http-80-tcp", "https-443-tcp", "all-icmp", "ssh-22-tcp"]
+  ingress_rules       = ["http-80-tcp", "https-443-tcp", "all-icmp", "ssh-tcp"]
   egress_rules        = ["all-all"]
 
   tags = var.securitygroup_tags
