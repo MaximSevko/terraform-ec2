@@ -6,8 +6,8 @@ module "security_group" {
   description = "Security group for EC2 instance"
   vpc_id      = module.vpc.vpc_id
 
-  ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules       = ["http-80-tcp", "https-443-tcp", "all-icmp"]
+  ingress_cidr_blocks = ["0.0.0.0/0", "::/0"]
+  ingress_rules       = ["http-80-tcp", "https-443-tcp", "all-icmp", "ssh-22-tcp"]
   egress_rules        = ["all-all"]
 
   tags = var.securitygroup_tags
