@@ -12,6 +12,7 @@ module "ec2_instance" {
     associate_public_ip_address = true
     key_name                    = "amikey"
     monitoring                  = true
+    user_data = file("mount")
 
     root_block_device = [
     {
