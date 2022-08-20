@@ -1,15 +1,19 @@
-module "ec2" {
-    source = "../../"
-  
+module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
+  version = "~> 3.0"
+
     name = var.ec2_name
   
-    ami = data.aws_ami.amazon_linux.id
+    ami = ami-0c0fcae772c706bbe
+
     instance_type               = "t4g.micro"
     availability_zone           = element(module.vpc.azs, 0)
     subnet_id                   = element(module.vpc.public_subnets, 0)
     vpc_security_group_ids      = [module.security_group.security_group_id]
     associate_public_ip_address = true
-    key_name = "amikey"
+    key_name                    = "amikey"
+    monitoring                  = true
+
     root_block_device = [
     {
       encrypted   = true
