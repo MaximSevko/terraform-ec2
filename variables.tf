@@ -35,7 +35,7 @@ variable "vpc_enable_nat_gateway" {
 
 variable "securitygroup_name" {
   type        = string
-  default     = "public"
+  default     = "amilinux_security_group"
 }
 
 
