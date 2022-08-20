@@ -4,8 +4,7 @@ module "ec2_instance" {
 
     name = var.ec2_name
   
-    ami = ami-0c0fcae772c706bbe
-
+    ami                         = "ami-0c0fcae772c706bbe"
     instance_type               = "t4g.micro"
     availability_zone           = element(module.vpc.azs, 0)
     subnet_id                   = element(module.vpc.public_subnets, 0)
@@ -60,5 +59,5 @@ module "ec2_instance" {
 #  tags = var.volume_tags
 #}
 #
-#resource "aws_kms_key" "this" {
-#}
+resource "aws_kms_key" "this" {
+}
