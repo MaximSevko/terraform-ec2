@@ -18,9 +18,6 @@ module "ec2_instance" {
       encrypted   = true
       volume_type = "gp3"
       volume_size = 10
-      tags = {
-        Name = "my-root-block"
-      }
     },
   ]
 
