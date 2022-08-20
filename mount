@@ -1,2 +1,4 @@
+#! /bin/bash
+
 echo $(blkid | grep /dev/nvme1n1 | awk '{print $2}') /home/ubuntu/disk2 xfs defaults 1 1 >> /etc/fstab
 echo $(blkid | grep /dev/nvme2n1 | awk '{print $2}') /home/ubuntu/disk3 xfs defaults 1 1 >> /etc/fstab
