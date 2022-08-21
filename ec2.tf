@@ -62,7 +62,7 @@ resource "aws_ebs_volume" "disk1" {
   size= 3
   type = "gp3"
   encrypted   = true
-  kms_key_id = aws_kms_key.this.key_id
+  kms_key_id = aws_kms_key.this.id
 
   tags = var.volume_tags
 }
