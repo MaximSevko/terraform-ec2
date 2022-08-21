@@ -11,7 +11,7 @@ resource "aws_iam_role" "admin" {
         "sts:SetSourceIdentity"
       ]
       Principal = {
-        Service = "rolesanywhere.amazonaws.com",
+               "Service": "ec2.amazonaws.com"
       }
       Effect = "Allow"
       Sid    = ""
@@ -19,8 +19,9 @@ resource "aws_iam_role" "admin" {
   })
 }
 
-resource "aws_rolesanywhere_profile" "test" {
+resource "aws_iam_instance_profile" "test" {
 
   name      = "admin"
-  role_arns = [aws_iam_role.admin.arn]
+  role = aws_iam_role.admin.name
+
 }
