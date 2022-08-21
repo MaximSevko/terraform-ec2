@@ -5,8 +5,12 @@ resource "aws_iam_role" "admin" {
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
-      Action = "*"
-       Principal = {
+      Action = [
+        "sts:AssumeRole",
+        "sts:TagSession",
+        "sts:SetSourceIdentity"
+      ]
+      Principal = {
         Service = "rolesanywhere.amazonaws.com",
       }
       Effect = "Allow"
