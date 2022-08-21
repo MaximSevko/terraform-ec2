@@ -21,7 +21,7 @@ module "ec2_instance" {
       encrypted   = true
       volume_type = "gp3"
       volume_size = 10
-      kms_key_id  = aws_kms_key.this
+      kms_key_id  = aws_kms_key.this.id
     },
   ]
 
