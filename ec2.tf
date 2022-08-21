@@ -28,14 +28,12 @@ module "ec2_instance" {
       volume_type = "gp3"
       volume_size = 3
       encrypted   = true
-      kms_key_id  = aws_kms_key.this.arn
     },
     {
       device_name = "/dev/sdc"
       volume_type = "gp3"
       volume_size = 2
       encrypted   = true
-      kms_key_id  = aws_kms_key.this.arn
     }
   ]
 
