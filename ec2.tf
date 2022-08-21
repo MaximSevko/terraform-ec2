@@ -14,7 +14,7 @@ module "ec2_instance" {
     monitoring                  = true
     user_data = file("mount")
 
-    iam_instance_profile = aws_iam_instance_profile.test
+    iam_instance_profile = aws_iam_instance_profile.test.name
 
     root_block_device = [
     {
