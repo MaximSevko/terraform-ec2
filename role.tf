@@ -6,7 +6,6 @@ resource "aws_iam_role" "admin" {
     Version = "2012-10-17"
     Statement = [{
       Action = "*"
-      Principal = {
       Effect = "Allow"
       Sid    = ""
     }]
