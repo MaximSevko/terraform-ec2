@@ -18,10 +18,10 @@ module "ec2_instance" {
 
     root_block_device = [
     {
-      encrypted   = false
+      encrypted   = true
       volume_type = "gp3"
       volume_size = 10
-#      kms_key_id  = aws_kms_key.this.id
+      kms_key_id  = aws_kms_key.this.id
     },
   ]
 
@@ -61,7 +61,7 @@ resource "aws_ebs_volume" "disk1" {
   availability_zone = element(module.vpc.azs, 0)
   size= 3
   type = "gp3"
-  encrypted   = false
+  encrypted   = true
   #kms_key_id = aws_kms_key.this
 
   tags = var.volume_tags
@@ -72,7 +72,7 @@ resource "aws_ebs_volume" "disk2" {
   size = 2
   type = "gp3"
 
-  encrypted   = false
+  encrypted = true
   #kms_key_id = aws_kms_key.this
   tags = var.volume_tags
 }
