@@ -21,7 +21,7 @@ module "ec2_instance" {
       encrypted   = true
       volume_type = "gp3"
       volume_size = 10
-      #kms_key_id  = aws_kms_key.this
+      kms_key_id  = aws_kms_key.this
     },
   ]
 
@@ -53,7 +53,7 @@ module "ec2_instance" {
 
   resource "aws_volume_attachment" "this1" {
   device_name = "/dev/sdc"
-  volume_id   = aws_ebs_volume.disk1.id
+  volume_id   = aws_ebs_volume.disk2.id
   instance_id = module.ec2.id
 }
 
