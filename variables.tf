@@ -84,5 +84,14 @@ variable "volume_tags" {
   default = {
     Terraform   = "true"
     env = "dev"
+    Name = "amilinux"
+  }
+}
+
+variable "role_tags" {
+  type        = map(string)
+  default = {
+    Terraform   = "true"
+    env = "dev"
   }
 }
