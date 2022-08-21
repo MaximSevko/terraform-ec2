@@ -14,3 +14,9 @@ resource "aws_iam_role" "admin" {
     }]
   })
 }
+
+resource "aws_rolesanywhere_profile" "test" {
+
+  name      = "example"
+  role_arns = [aws_iam_role.test.arn]
+}
