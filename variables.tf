@@ -46,6 +46,17 @@ variable "ec2_name" {
 }
 
 
+variable "role_name" {
+  type        = string
+  default     = "amilinux_role"
+}
+
+
+variable "route53_name" {
+  type        = string
+  default     = "Amazon Linux 2 Instance"
+}
+
 
 
 
@@ -95,3 +106,13 @@ variable "role_tags" {
     env = "dev"
   }
 }
+
+
+variable "route53_tags" {
+  type        = map(string)
+  default = {
+    Terraform   = "true"
+    env = "dev"
+  }
+}
+
