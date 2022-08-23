@@ -1,5 +1,5 @@
-resource "aws_iam_role" "admin" {
-  name = "admin"
+resource "aws_iam_role" "role" {
+  name = var.role_name
   path = "/"
 
   assume_role_policy = jsonencode({
@@ -20,8 +20,7 @@ resource "aws_iam_role" "admin" {
 }
 
 resource "aws_iam_instance_profile" "test" {
-
-  name      = "admin"
-  role = aws_iam_role.admin.name
-
+  name      = var.role_name
+  role = aws_iam_role.role.name
 }
+
