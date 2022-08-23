@@ -3,6 +3,8 @@ variable "AWS_Region" {
     default = "eu-central-1"
 }
 
+#VPC
+
 variable "vpc_name" {
   description = "Name of VPC"
   type        = string
@@ -33,36 +35,6 @@ variable "vpc_enable_nat_gateway" {
   default     = false
 }
 
-variable "securitygroup_name" {
-  type        = string
-  default     = "amilinux_security_group"
-}
-
-
-
-variable "ec2_name" {
-  type        = string
-  default     = "Amazon Linux 2 Instance"
-}
-
-
-variable "role_name" {
-  type        = string
-  default     = "amilinux_role"
-}
-
-
-variable "route53_name" {
-  type        = string
-  default     = "Amazon Linux 2 Instance"
-}
-
-
-
-
-
-
-
 variable "vpc_tags" {
   description = "Tags to apply to resources created by VPC module"
   type        = map(string)
@@ -70,6 +42,59 @@ variable "vpc_tags" {
     Terraform   = "true"
     env = "dev"
   }
+}
+
+
+#EC2
+
+variable "ec2_name" {
+  type        = string
+  default     = "Amazon Linux 2 Instance"
+}
+
+variable "ec2_ami" {
+  type        = string
+  default     = "ami-0c0fcae772c706bbe"
+}
+
+variable "ec2_instance_type" {
+  type        = string
+  default     = "t4g.micro"
+}
+
+variable "ec2_key_name" {
+  type        = string
+  default     = "amikey"
+}
+
+variable "ec2_key_name" {
+  type        = string
+  default     = "amikey"
+}
+
+variable "ec2_tags" {
+  type        = map(string)
+  default = {
+    Terraform   = "true"
+    env = "dev"
+  }
+}
+
+variable "volume_tags" {
+  type        = map(string)
+  default = {
+    Terraform   = "true"
+    env = "dev"
+    Name = "amilinux"
+  }
+}
+
+
+#Security Group
+
+variable "securitygroup_name" {
+  type        = string
+  default     = "amilinux_security_group"
 }
 
 variable "securitygroup_tags" {
@@ -81,23 +106,13 @@ variable "securitygroup_tags" {
 }
 
 
-variable "ec2_tags" {
-  type        = map(string)
-  default = {
-    Terraform   = "true"
-    env = "dev"
-  }
+#Role
+
+variable "role_name" {
+  type        = string
+  default     = "amilinux_role"
 }
 
-
-variable "volume_tags" {
-  type        = map(string)
-  default = {
-    Terraform   = "true"
-    env = "dev"
-    Name = "amilinux"
-  }
-}
 
 variable "role_tags" {
   type        = map(string)
@@ -108,6 +123,13 @@ variable "role_tags" {
 }
 
 
+#Route 53
+
+variable "route53_name" {
+  type        = string
+  default     = "Amazon Linux 2 Instance"
+}
+
 variable "route53_tags" {
   type        = map(string)
   default = {
@@ -115,4 +137,3 @@ variable "route53_tags" {
     env = "dev"
   }
 }
-
