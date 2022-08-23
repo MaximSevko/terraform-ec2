@@ -13,14 +13,14 @@ resource "aws_route53_record" "www" {
 resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.dev.zone_id
   name    = "www.example.com"
-  type    = "A"
+  type    = "AAAA"
   ttl     = 300
-  records = [ec2_instance.public_ip]
+  records = [ec2_instance.ipv6_addresses]
 }
 resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.dev.zone_id
   name    = "www.example.com"
-  type    = "A"
+  type    = "NS"
   ttl     = 300
-  records = [aws_eip.lb.public_ip]
+  records = [ec2_instance.id]
 }

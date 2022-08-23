@@ -127,8 +127,14 @@ variable "role_tags" {
 
 variable "route53_name" {
   type        = string
-  default     = "Amazon Linux 2 Instance"
+  default     = ""
 }
+
+variable "route53_record_name" {
+  type        = string
+  default     = ""
+}
+
 
 variable "route53_tags" {
   type        = map(string)
