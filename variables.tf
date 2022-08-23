@@ -121,7 +121,7 @@ variable "role_tags" {
 
 #Route 53
 
-variable "route53_name" {
+variable "route53_zone_name" {
   type        = string
   default     = ""
 }
