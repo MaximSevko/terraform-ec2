@@ -17,10 +17,3 @@ resource "aws_route53_record" "record2" {
   ttl     = 300
   records = [module.ec2_instance.ipv6_addresses]
 }
-resource "aws_route53_record" "record3" {
-  zone_id = aws_route53_zone.dev.zone_id
-  name    = var.route53_record_name
-  type    = "NS"
-  ttl     = 300
-  records = [module.ec2_instance.id]
-}
