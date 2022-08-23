@@ -67,10 +67,6 @@ variable "ec2_key_name" {
   default     = "amikey"
 }
 
-variable "ec2_key_name" {
-  type        = string
-  default     = "amikey"
-}
 
 variable "ec2_tags" {
   type        = map(string)
