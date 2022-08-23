@@ -4,13 +4,13 @@ module "ec2_instance" {
 
     name = var.ec2_name
   
-    ami                         = "ami-0c0fcae772c706bbe"
-    instance_type               = "t4g.micro"
+    ami                         = var.ec2_ami
+    instance_type               = var.ec2_instance_type
     availability_zone           = element(module.vpc.azs, 0)
     subnet_id                   = element(module.vpc.public_subnets, 0)
     vpc_security_group_ids      = [module.security_group.security_group_id]
     associate_public_ip_address = true
-    key_name                    = "amikey"
+    key_name                    = var.ec2_key_name
     monitoring                  = true
     user_data = file("mount")
 
