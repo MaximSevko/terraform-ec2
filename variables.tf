@@ -119,23 +119,3 @@ variable "role_tags" {
 }
 
 
-#Route 53
-
-variable "route53_zone_name" {
-  type        = string
-  default     = ""
-}
-
-variable "route53_record_name" {
-  type        = string
-  default     = ""
-}
-
-
-variable "route53_tags" {
-  type        = map(string)
-  default = {
-    Terraform   = "true"
-    env = "dev"
-  }
-}
