@@ -35,7 +35,6 @@ variable "vpc_enable_nat_gateway" {
   default     = false
 }
 
-<<<<<<< HEAD
 variable "securitygroup_name" {
   type        = string
   default     = "amilinux_security_group"
@@ -61,21 +60,6 @@ variable "route53_name" {
 }
 
 
-
-
-
-
-
-=======
->>>>>>> develop
-variable "vpc_tags" {
-  description = "Tags to apply to resources created by VPC module"
-  type        = map(string)
-  default = {
-    Terraform   = "true"
-    env = "dev"
-  }
-}
 
 
 #EC2
@@ -151,15 +135,3 @@ variable "role_tags" {
   }
 }
 
-
-<<<<<<< HEAD
-variable "route53_tags" {
-  type        = map(string)
-  default = {
-    Terraform   = "true"
-    env = "dev"
-  }
-}
-
-=======
->>>>>>> develop
