@@ -84,6 +84,6 @@ variable "volume_tags" {
   default = {
     Terraform   = "true"
     env = "dev"
-    disk = "gp3"
+    volume = "gp3"
   }
 }
