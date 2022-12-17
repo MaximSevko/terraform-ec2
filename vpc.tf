@@ -22,7 +22,6 @@ module "vpc" {
 
   public_subnet_assign_ipv6_address_on_creation = "true"
 
-
   tags = var.vpc_tags
 
 }
