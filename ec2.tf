@@ -52,7 +52,6 @@ module "ec2_instance" {
 #
 #  tags = var.volume_tags
 #}
-#
 
 resource "aws_kms_key" "this" {
 }
