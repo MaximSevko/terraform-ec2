@@ -87,3 +87,12 @@ variable "volume_tags" {
     volume = "gp3"
   }
 }
+
+variable "volume_tags" {
+  type        = map(string)
+  default = {
+    Terraform   = "true"
+    env = "dev"
+    volume = "gp3"
+  }
+}
