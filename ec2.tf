@@ -37,8 +37,6 @@ module "ec2_instance" {
     }
   ]
 
-
-
     tags = var.ec2_tags
   }
 
