@@ -16,7 +16,7 @@ variable "vpc_cidr" {
 }
 
 variable "vpc_intra_subnets" {
-  description = "Private subnets for VPC"
+  description = "Intra subnets for VPC"
   type        = list(string)
   default     = ["10.81.1.0/24", "10.81.2.0/24", "10.81.3.0/24"]
 }
