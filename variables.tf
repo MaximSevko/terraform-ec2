@@ -57,6 +57,7 @@ variable "vpc_tags" {
   default = {
     Terraform   = "true"
     env = "dev"
+    os = "Amilinux"
   }
 }
 
