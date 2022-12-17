@@ -10,7 +10,7 @@ module "ec2_instance" {
     subnet_id                   = element(module.vpc.public_subnets, 0)
     vpc_security_group_ids      = [module.security_group.security_group_id]
     associate_public_ip_address = true
-    key_name                    = "amikey"
+    key_name                    = " "
     monitoring                  = true
     user_data = file("mount")
 
