@@ -74,6 +74,8 @@ variable "ec2_tags" {
   default = {
     Terraform   = "true"
     env = "dev"
+    os = "Amilinux"
+
   }
 }
 
