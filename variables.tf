@@ -54,7 +54,6 @@ variable "vpc_tags" {
   type        = map(string)
   default = {
     Terraform   = "true"
-    env = "dev"
   }
 }
 
