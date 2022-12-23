@@ -66,7 +66,6 @@ variable "securitygroup_tags" {
   }
 }
 
-
 variable "ec2_tags" {
   type        = map(string)
   default = {
@@ -76,7 +75,6 @@ variable "ec2_tags" {
   }
 }
 
-
 variable "volume_tags" {
   type        = map(string)
   default = {
@@ -85,4 +83,3 @@ variable "volume_tags" {
     volume_type = "gp3"
   }
 }
-
