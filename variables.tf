@@ -48,14 +48,6 @@ variable "ec2_name" {
 
 
 
-variable "vpc_tags" {
-  description = "Tags to apply to resources created by VPC module"
-  type        = map(string)
-  default = {
-    Terraform   = "true"
-  }
-}
-
 
 
 variable "vpc_tags" {
@@ -73,7 +65,6 @@ variable "securitygroup_tags" {
     env = "dev"
   }
 }
-
 
 variable "ec2_tags" {
   type        = map(string)
