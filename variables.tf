@@ -66,6 +66,7 @@ variable "securitygroup_tags" {
   }
 }
 
+
 variable "ec2_tags" {
   type        = map(string)
   default = {
