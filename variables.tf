@@ -26,7 +26,6 @@ variable "vpc_public_subnets" {
   default     = ["10.81.101.0/24", "10.81.102.0/24", "10.81.103.0/24"]
 }
 
-
 variable "vpc_enable_nat_gateway" {
   description = "Enable NAT gateway for VPC"
   type        = bool
