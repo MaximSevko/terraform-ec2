@@ -55,7 +55,6 @@ variable "vpc_tags" {
 }
 
 
-
  
 variable "securitygroup_tags" {
   type        = map(string)
