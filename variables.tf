@@ -51,7 +51,6 @@ variable "vpc_tags" {
     Terraform   = "true"
   }
 }
-
  
 variable "securitygroup_tags" {
   type        = map(string)
