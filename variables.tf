@@ -38,7 +38,6 @@ variable "securitygroup_name" {
 }
 
 
-
 variable "ec2_name" {
   type        = string
   default     = "Amazon Linux 2 Instance"
